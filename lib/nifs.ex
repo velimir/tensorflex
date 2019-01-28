@@ -123,4 +123,8 @@ defmodule Tensorflex.NIFs do
     raise "NIF tensor_to_matrix/1 not implemented"
   end
 
+  def decode_jpeg(_binary) do
+    raise "NIF decode_jpeg/1 not implemented"
+  end
+
 end

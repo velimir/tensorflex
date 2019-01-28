@@ -1526,4 +1526,12 @@ defmodule Tensorflex do
     %Matrix{nrows: nrows, ncols: ncols, data: matrix_ref}
   end
   
+  @doc """
+  TODO: write docs
+  """
+
+  def decode_jpeg(binary) do
+    NIFs.decode_jpeg(binary)
+  end
+  
 end
