@@ -1533,5 +1533,15 @@ defmodule Tensorflex do
   def decode_jpeg(binary) do
     NIFs.decode_jpeg(binary)
   end
+
+
+  @doc """
+  TODO: write docs
+  """
+
+  def resize_image(in_binary, in_width, in_height, num_channels, out_width, out_height) do
+    NIFs.resize_image(in_binary, in_width, in_height, num_channels, out_width, out_height)
+  end
+
   
 end

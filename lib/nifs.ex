@@ -127,4 +127,8 @@ defmodule Tensorflex.NIFs do
     raise "NIF decode_jpeg/1 not implemented"
   end
 
+  def resize_image(_in_binary, _in_width, _in_height, _num_channels, _out_width, _out_height) do
+    raise "NIF resize_image/6 not implemented"
+  end
+
 end
