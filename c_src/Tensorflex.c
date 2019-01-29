@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "c_api.h"
 #include "erl_nif.h"
 
@@ -8,7 +10,6 @@
 #include <jpeglib.h>
 #include <stddef.h>
 #include <stdint.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
