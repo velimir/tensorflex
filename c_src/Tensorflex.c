@@ -827,7 +827,8 @@ static ERL_NIF_TERM load_image_as_tensor(ErlNifEnv *env, int argc,
 
   cinfo.err = jpeg_std_error(&jerr);
   jpeg_create_decompress(&cinfo);
-  jpeg_mem_src(&cinfo, input_img, input_size);
+  FILE * img_src = fmemopen(input_img, input_size, "rb");
+  jpeg_stdio_src(&cinfo, img_src);
   error_check = jpeg_read_header(&cinfo, TRUE);
 
   if (error_check != 1)
@@ -848,6 +849,7 @@ static ERL_NIF_TERM load_image_as_tensor(ErlNifEnv *env, int argc,
 
   jpeg_finish_decompress(&cinfo);
   jpeg_destroy_decompress(&cinfo);
+  fclose(img_src);
   free(input_img);
 
   const int size_alloc = output_size * sizeof(unsigned char);
